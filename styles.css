@@ -1,0 +1,417 @@
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #080e0a;
+    color: #e5e7eb;
+    overflow-x: hidden;
+}
+
+/* Noise background texture effect */
+.noise-bg {
+    background-image: radial-gradient(rgba(134, 239, 172, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+    position: relative;
+}
+.noise-bg::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.04;
+    pointer-events: none;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%ー" height="100%" filter="url(%23noiseFilter)"/></svg>');
+}
+
+/* Psychedelic Logo Styling inspired by sketch */
+.logo-psychedelic {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #86efac 0%, #b19cd9 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 0px rgba(134, 239, 172, 0.4)) drop-shadow(-1px -1px 0px rgba(177, 156, 217, 0.6));
+    transform: skew(-5deg);
+}
+
+/* Artist tag styling */
+.artist-tag {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.artist-tag:hover {
+    transform: scale(1.05) translateY(-2px);
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(216, 180, 254, 0.8);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #080e0a;
+}
+::-webkit-scrollbar-thumb {
+    background: #b19cd9;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================== */
+:root {
+    --bg-color: #0b120e;
+    --text-green: #4ade80;
+    --text-purple: #c084fc;
+    --accent-purple: #a855f7;
+    --nav-purple: #c084fc;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #fff;
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Textura granulada de fondo tipo CRT / ruido analógico */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* ==========================================
+   CABECERA Y NAVEGACIÓN
+   ========================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 5%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Logotipo psicodélico NACHARTA FEST */
+.logo-container {
+    display: inline-block;
+}
+
+.festival-logo {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 1.25rem!important;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #86efac 0%, #34d399 30%, #e879f9 70%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 0px rgba(74, 222, 128, 0.4)) drop-shadow(-2px -2px 0px rgba(192, 132, 252, 0.3));
+    transform: skew(-5deg);
+    transition: transform 0.3s ease;
+}
+
+.festival-logo:hover {
+    transform: skew(-5deg) scale(1.03);
+}
+
+/* Menú de navegación principal (Desktop) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #a7f3d0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+}
+
+/* Botón de Entradas superior */
+.btn-entradas {
+    background-color: var(--nav-purple);
+    color: #0b120e !important;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 15px rgba(192, 132, 252, 0.4);
+    transition: all 0.3s ease !important;
+}
+
+.btn-entradas:hover {
+    background-color: #d8b4fe;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(192, 132, 252, 0.6);
+}
+
+/* Menú hamburguesa para móviles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 110;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--text-green);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================
+   SECCIÓN DE FECHA Y UBICACIÓN
+   ========================================== */
+.hero-info {
+    text-align: center;
+    margin: 40px auto 30px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.dates-location {
+    font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-green);
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.location-link {
+    color: var(--text-purple);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+}
+
+.location-link:hover {
+    color: #e879f9;
+}
+
+/* ==========================================
+   CARTEL DE ARTISTAS
+   ========================================== */
+.lineup-container {
+    max-width: 1200px;
+    margin: 30px auto 80px auto;
+    padding: 0 5%;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.artists-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.artist-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+}
+
+.artist {
+    font-size: clamp(1.2rem, 2.4vw, 2.1rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-purple);
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-shadow: 0 0 8px rgba(192, 132, 252, 0.2);
+}
+
+.artist:hover {
+    color: #fff;
+    transform: scale(1.05);
+    text-shadow: 0 0 12px rgba(232, 121, 249, 0.8);
+}
+
+.separator {
+    color: var(--text-green);
+    font-weight: 900;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* ==========================================
+   VENTANAS MODALES (INTERACTIVIDAD)
+   ========================================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 18, 14, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #121e17;
+    border: 2px solid var(--text-green);
+    border-radius: 16px;
+    padding: 40px 30px;
+    max-width: 550px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 10px 35px rgba(74, 222, 128, 0.2);
+    text-align: left;
+    animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes modalPop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-green);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: #fff;
+}
+
+.modal-content h2 {
+    color: var(--text-green);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.modal-content p {
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   MEDIA QUERIES (DISEÑO RESPONSIVO)
+   ========================================== */
+
+/* Tablets y pantallas medianas (≤ 900px) */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: #0e1712;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+        transition: right 0.4s ease-in-out;
+        z-index: 100;
+        border-left: 1px solid rgba(74, 222, 128, 0.2);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+
+    .artist-row {
+        gap: 10px 18px;
+    }
+}
+
+/* Móviles pequeños (≤ 600px) */
+@media (max-width: 600px) {
+    header {
+        padding: 16px 5%;
+    }
+
+    .hero-info {
+        margin: 25px auto 20px auto;
+    }
+
+    .dates-location {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .artist-row {
+        gap: 8px 12px;
+    }
+
+    .separator {
+        display: none; /* Oculta los puntos en pantallas muy estrechas para mejor distribución */
+    }
+
+    .artists-grid {
+        gap: 12px;
+    }
+
+    .modal-content {
+        padding: 25px 20px;
+    }
+}
