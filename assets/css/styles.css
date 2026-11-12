@@ -55,7 +55,6 @@ html {
     top: 0;
     left: 0;
     width: 100vw;
-    min-height: 100vh;
     height: 100vh;
     z-index: 99999; /* Por encima de todo */
     background-color: #f5f4f0; /* Fondo base de la web */
@@ -251,7 +250,7 @@ html {
 }
 
 .header-title {
-    font-family: 'WASHINGTON';
+    font-family: 'Washington';
     -webkit-text-stroke: 0.4px #3b5238;
     color: #3b5238;
     letter-spacing: 0;
@@ -923,7 +922,7 @@ nav.navbar {
 }
 
 .hero-title {
-    font-family: 'Washington';
+    font-family: var(--font-heading);
     font-size: 3.2rem;
     font-weight: 500;
     line-height: 1.15;
