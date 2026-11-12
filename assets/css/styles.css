@@ -251,7 +251,7 @@ html {
 }
 
 .header-title {
-    font-family: var(--font-cinzel);
+    font-family: 'WASHINGTON';
     -webkit-text-stroke: 0.4px #3b5238;
     color: #3b5238;
     letter-spacing: 0;
