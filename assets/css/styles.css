@@ -55,6 +55,7 @@ html {
     top: 0;
     left: 0;
     width: 100vw;
+    min-height: 100vh;
     height: 100vh;
     z-index: 99999; /* Por encima de todo */
     background-color: #f5f4f0; /* Fondo base de la web */
@@ -922,7 +923,7 @@ nav.navbar {
 }
 
 .hero-title {
-    font-family: var(--font-heading);
+    font-family: 'Washington';
     font-size: 3.2rem;
     font-weight: 500;
     line-height: 1.15;
