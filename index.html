@@ -1,0 +1,431 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacho y Marta — ¡La boda del año!</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lenis Smooth Scroll -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- PRELOADER OVERLAY (7 SEGUNDOS + FADE OUT) -->
+    <div id="preloader-overlay">
+
+        <section class="section hero-section">
+            <div class="bg-flowers">
+                <div class="booth-frame">
+                    <div class="photostrip-container">
+                        <div class="photo-slot"><img src="assets/images/photo1.jpg" alt="Marta &amp; Nacho 1"></div>
+                        <div class="photo-slot"><img src="assets/images/photo2.jpg" alt="Marta &amp; Nacho 2"></div>
+                        <div class="photo-slot"><img src="assets/images/photo3.jpg" alt="Marta &amp; Nacho 3"></div>
+                        <div class="photo-slot"><img src="assets/images/photo4.jpg" alt="Marta &amp; Nacho 4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-footer">
+                <p class="sub-heading">SAVE THE DATE</p>
+                <p class="date-display">10 Julio 2026</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- STICKY NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="assets/images/Logotipo.png" alt="Marta & Nacho Logo">
+            </a>
+
+            <ul class="nav-links nav-desktop">
+                <li><a href="#details">Detalles</a></li>
+                <li><a href="#timeline">Planning</a></li>
+                <li><a href="#faq">Preguntas y recomendaciones</a></li>
+            </ul>
+
+            <button class="nav-btn-rsvp nav-desktop" onclick="openRSVPModal()">Confirmar asistencia</button>
+
+            <!-- HAMBURGER BUTTON MOBILE -->
+            <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileMenu(event)" aria-label="Toggle Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-mobile-btn" onclick="closeMobileMenu()" aria-label="Close Menu">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="#details" class="mobile-link" onclick="closeMobileMenu()">Detalles</a></li>
+            <li><a href="#timeline" class="mobile-link" onclick="closeMobileMenu()">Planning</a></li>
+            <li><a href="#faq" class="mobile-link" onclick="closeMobileMenu()">Preguntas y recomendaciones</a></li>
+            <li><a target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeEOxnONp7vpVjVMAeGUY_V-8XXoJdpnxfaY4f02m-I-M6zWA/viewform?usp=publish-editor" class="mobile-btn-rsvp">Confirmar asistencia</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. HERO FIXED PARALLAX SECTION (IMAGEN 1) -->
+    <section class="hero-fixed-section">
+        <div class="hero-fixed-content">
+            <h1 class="header-title"><span class="special-character">N</span>ues<span class="special-character4">t</span>r<span class="special-character4">o</span><br><span class="header-title title-row_2"><span class="special-character2">g</span>ra<span class="special-character3">n</span></span><br><span class="header-title title-row_3"><span class="special-character3">D</span>ía</span></h1>
+            
+            <!-- Carousel (deshabilitado)
+            <div class="hero-carousel-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" alt="Flowers">
+                    </div>
+                    <div class="carousel-slide slide-rsvp-overlay">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Mia & Noah Wedding Couple">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80" alt="Wedding Bouquet">
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!--Bloque imágenes desordenadas-->
+
+    <article class="doubleoverlap flowers-row" >
+        <div class="photo-bg">
+            <img src="assets/images/bg-2.png" alt="Fondo flores">
+        </div>
+        <div class="doubleoverlap__row" >
+            <div data-direction="1" class="doubleoverlap__image"  style="transform: translate(0px, 4.56792px) rotate(1.52264deg);">
+                <div class="bimage lazy loaded" >
+                    <img width="2500" height="1667" src="assets/images/us_1.jpg" alt="">
+                </div>
+            </div>
+            <div data-direction="-1" class="doubleoverlap__image"  style="transform: translate(0px, -4.56792px) rotate(-1.52264deg);">
+                <div class="bimage lazy loaded" >
+                    <img width="2500" height="1667" src="assets/images/us_2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- MAIN SCROLLING CONTENT WRAPPER (Z-INDEX SUPERIOR QUE CUBRE AL HERO DE FONDO) -->
+
+    <main class="main-scrolling-content">
+
+    <!-- 2. INTRO / STORY WITH FULLSCREEN VIDEO SECTION (IMAGEN 2) -->
+        <section class="section story-section">
+            <div class="container text-center max-w-editorial fade-up">
+                <p class="story-large-text">
+                    ¡Ya casi está aqui! El día de nuestra boda es una celebración del <em>amor, de la familia y del camino</em> que hemos construido juntos. Rodeados de amigos y de momentos entrañables, estamos deseando compartir esta ocasión tan especial con vosotros, creando recuerdos que durarán toda la vida.
+                </p>
+            </div>
+        </section>
+    
+        <!-- Video completo -->
+        <div class="container video-container fade-up">
+            <div class="video-frame">
+                <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80">
+                    <source src="assets/images/video_boda.mp4" type="video/mp4">
+                    Vaya! Tu navegador no soporta reproducción de vídeo, pídenoslo por whatsapp, te va a encantar.
+                </video>
+            </div>
+        </div>
+
+    <!--Fechas grandes-->
+    <section class="x-marquee-section">
+        <div class="marquee-track-wrapper track-right">
+            <div class="marquee-content">
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+            </div>
+        </div>
+        <div class="marquee-track-wrapper track-left">
+            <div class="marquee-content">
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+                <span><b>10</b> Julio <b>2027</b> &nbsp;&bull;&nbsp; </span>
+            </div>
+        </div>
+    </section>   
+
+    <!--Bloque imágenes ordenadas continuas-->
+    <article class="continous-images flowers-row" >
+        <div class="photo-bg flowers_2">
+            <img src="assets/images/bg-2.png" alt="Fondo flores">
+        </div>
+        <div class="continous-images__row" >
+            <div data-direction="1" class="continous-images__image">
+                <div class="bimage lazy loaded" >
+                    <img width="2500" height="1667" src="assets/images/us_3.jpg" alt="" style="aspect-ratio: 1.4997 / 1;">
+                </div>
+            </div>
+            <div data-direction="-1" class="continous-images__image">
+                <div class="bimage lazy loaded" >
+                    <img width="2500" height="1667" src="assets/images/us_4.jpg" alt="" style="aspect-ratio: 1.4997 / 1;">
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- 3. TIMELINE SECTION CON TÍTULO STICKY A LA IZQUIERDA (IMAGEN 3) -->
+    <section id="timeline" class="section timeline-sticky-section">
+        <div class="container timeline-sticky-grid">
+            
+            <!-- Columna Izquierda: Título Sticky -->
+            <div class="timeline-title-sticky">
+                <h2 class="sticky-title">Planning</h2>
+            </div>
+
+            <!-- Columna Derecha: Lista de Eventos -->
+            <div class="timeline-events-list">
+                <div class="timeline-row fade-up">
+                    <div class="event-time">19:30 PM</div>
+                    <div class="event-details">
+                        <h3 class="event-title">Recepción inicial</h3>
+                        <p class="event-desc">Los invitados llegan y se acomodan antes de que comience la ceremonia. Tómate un momento para saludar, conocer algunos invitados, refrescarte con una limonada para combatir el calor, buscar tu asiento y compartir cotilleos sobre cómo iremos vestidos mientras nos preparamos para los momentos más significativos del día.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-row fade-up">
+                    <div class="event-time">20:30 PM</div>
+                    <div class="event-details">
+                        <h3 class="event-title">¡Sí, quiero!</h3>
+                        <p class="event-desc">La ceremonia en la que intercambiamos votos y promesas para una vida juntos. Rodeados de familiares y amigos, este es el corazón de nuestra celebración. Podéis llorar todo lo que queráis.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-row fade-up">
+                    <div class="event-time">21:30 PM</div>
+                    <div class="event-details">
+                        <h3 class="event-title">Cocktail y cena en mesa</h3>
+                        <p class="event-desc">Hora de comer. Comenzaremos con un cocktail de pie en torno a algunas mesas, durante un par de horas. Es el momento perfecto de conocer gente nueva, saludar a las familias, darnos la enhorabuena antes de que lleves un par de copas de más y disfrutar de una selección de más de 40 entrantes. <br> Tras esto, tendremos un plato principal en mesa para aquellos que se hayan quedado con hambre, con asientos asignados en mesas adaptadas para haceros sentir lo más cómodos posible.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-row fade-up">
+                    <div class="event-time">23:30 PM</div>
+                    <div class="event-details">
+                        <h3 class="event-title">Hora de celebrar</h3>
+                        <p class="event-desc">El momento de la noche que todos esperan: barra libre, música y fiesta hasta que el cuerpo aguante. Os tenemos una sorpresa preparada además del DJ.¡Preparaos para cantar y bailar!.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-row fade-up">
+                    <div class="event-time">2:00 PM</div>
+                    <div class="event-details">
+                        <h3 class="event-title">Recena</h3>
+                        <p class="event-desc">Porque ya sabemos que pasa combinando baile y copas, y no queremos que nadie desmaye antes de tiempo, ¡Bocadillos y snacks para recargar las ganas de perreo!.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Bloque imágenes desordenadas 2-->
+
+    <article class="doubleoverlap double-second flowers-row" >
+        <div class="photo-bg flowers_3">
+            <img src="assets/images/bg-2.png" alt="Fondo flores">
+        </div>
+        <div class="doubleoverlap__row" >
+            <div data-direction="1" class="doubleoverlap__image"  style="transform: translate(0px, 4.56792px) rotate(1.52264deg);">
+                <div class="bimage lazy loaded" >
+                    <img width="2500" height="1667" src="assets/images/us_5.jpg" alt="" style="aspect-ratio: 1.4997 / 1;">
+                </div>
+            </div>
+            <div data-direction="-1" class="doubleoverlap__image"  style="transform: translate(0px, -4.56792px) rotate(-1.52264deg);">
+                <div class="bimage lazy loaded" >
+                    <img width="2500" height="1667" src="assets/images/us_6.jpg" alt="" style="aspect-ratio: 1.4997 / 1;">
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- 4. BLOQUES CON STICKY STACKING EFFECT (PISÁNDOSE UNO SOBRE OTRO CON POSITION STICKY Y Z-INDEX) (IMAGEN 4) -->
+    <section id="details" class="section sticky-stacking-container">
+        <div class="container">
+            
+            <!-- Bloque 1: Recepción y Ceremonia -->
+            <div class="feature-card sticky-card card-z1">
+                <div class="feature-card-content">
+                    <div>
+                        <h2 class="feature-card-title">Finca  Las Velas</h2>
+                        <p class="feature-card-text"></p>
+                    </div>
+                    <a target="blank" href="https://maps.app.goo.gl/6urLby4hgSLYmApv8" class="feature-card-link">Cómo llegar</a>
+                </div>
+                <div class="feature-card-image-wrapper">
+                    <div class="container video-container">
+                        <div class="video-frame">
+                            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80">
+                                <source src="assets/images/finca-las-velas.mp4" type="video/mp4">
+                                Vaya! Tu navegador no soporta reproducción de vídeo, pídenoslo por whatsapp, te va a encantar.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloque 2: Ubicación y Hoteles Cercanos -->
+            <div class="feature-card sticky-card card-z2">
+                <div class="feature-card-content">
+                    <div>
+                        <h2 class="feature-card-title">Hoteles cercanos</h2>
+                        <p class="feature-card-text"></p>
+                    </div>
+                    <a target="blank" href="https://www.google.com/maps/d/edit?mid=13Ut_StM2hEO58bhyrd2pbNIZSGBgRPk&usp=sharing" class="feature-card-link">Información detallada</a>
+                </div>
+                <div class="feature-card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80" alt="Travel and Hotel Accommodations">
+                </div>
+            </div>
+
+            <!-- Bloque 3: Menú y Barra Libre -->
+            <div class="feature-card sticky-card card-z3">
+                <div class="feature-card-content">
+                    <div>
+                        <h2 class="feature-card-title">Cocktail y cena</h2>
+                        <p class="feature-card-text"></p>
+                    </div>
+                    <a href="#about-menu" class="feature-card-link">Información sobre alérgenos</a>
+                </div>
+                <div class="feature-card-image-wrapper">
+                    <span class="corner-badge">Avísanos si tienes intolerancias/alergias</span>
+                    <img src="assets/images/food.jpg" alt="Dining and Gourmet Food">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. FAQ SECTION EXACTA A LA IMAGEN 5 -->
+    <section id="faq" class="section faq-exact-section">
+        <div class="container">
+            
+            <!-- Encabezado FAQ (2 columnas: Izquierda "FAQ", Derecha Titular + Descripción grande) -->
+            <div class="faq-header-grid">
+                <div class="faq-header-left">
+                    <span class="faq-label">Preguntas y recomendaciones</span>
+                </div>
+                <div class="faq-header-right">
+                    <h2 class="faq-main-title">Hemos recogido algunos detalles, ¡para que podáis centraros en confirmar vuestra reserva lo antes posible sin dudas ni preocupaciones!</h2>
+                </div>
+            </div>
+
+            <!-- Acordeón FAQ Exacto -->
+            <div class="faq-accordion-exact">
+                
+                <!-- Pre-expansión 01 acordeón según la imagen 5 -->
+                <details class="faq-row-exact" open>
+                    <summary class="faq-summary">
+                        <span class="faq-num">01</span>
+                        <span class="faq-q-text">¿Puedo ir acompañad@?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </summary>
+                    <div class="faq-ans-body">
+                        <p>Nos encantaría poder celebrar este día con todos, pero el espacio es limitado. Enviaremos invitaciones individuales a cada uno de vosotros, pero podéis confirmar la asistencia juntos si sois pareja.</p>
+                    </div>
+                </details>
+
+                <details class="faq-row-exact">
+                    <summary class="faq-summary">
+                        <span class="faq-num">02</span>
+                        <span class="faq-q-text">¿Los peques son bienvenidos?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </summary>
+                    <div class="faq-ans-body">
+                        <p>No sólo son bienvenidos, tendrán una zona para que jueguen mientras son vigilados y los papis descansan y se lo pasan bien.</p>
+                    </div>
+                </details>
+
+                <details class="faq-row-exact">
+                    <summary class="faq-summary">
+                        <span class="faq-num">03</span>
+                        <span class="faq-q-text">¿Cuál es el código de vestimenta?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </summary>
+                    <div class="faq-ans-body">
+                        <p>Esto tenemos que acordarlo bien bien para todos los invitados, estilo formal o informal, dando detalles.</p>
+                    </div>
+                </details>
+
+                <details class="faq-row-exact">
+                    <summary class="faq-summary">
+                        <span class="faq-num">04</span>
+                        <span class="faq-q-text">¿Hay opción vegetariana en el cocktail y en el menú?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </summary>
+                    <div class="faq-ans-body">
+                        <p>No sé si llevamos alguien vegetariano a la boda, tendremos que preguntar y ponerlo</p>
+                    </div>
+                </details>
+
+            </div>
+
+        </div>
+    </section>
+
+<footer class="wedding-footer">
+    <div class="footer-bg-image">
+        <img src="assets/images/ramo.jpg" alt="Marta & Nacho Wedding">
+    </div>
+
+    <div class="confirmation-mobile">
+        <a target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeEOxnONp7vpVjVMAeGUY_V-8XXoJdpnxfaY4f02m-I-M6zWA/viewform?usp=publish-editor" class="mobile-btn-rsvp confirmation-mobile_btn">Confirmar asistencia</a>
+    </div>
+
+    <div class="footer-content-overlay">
+        <div class="footer-header-block">
+            <h2 class="footer-main-title">Nacho &<br>Marta</h2>
+        </div>
+
+        <div class="footer-credits-section">
+            <h3 class="footer-section-heading">Agradecimientos <br>especiales</h3>
+            <div class="credit-group">
+                <span class="credit-role">Wedding planner</span>
+                <span class="credit-name">Maria José (la super madre de Nacho)</span>
+            </div>
+            <div class="credit-group">
+                <span class="credit-role">Catering</span>
+                <span class="credit-name">Fernando Catering</span>
+            </div>
+            <div class="credit-group">
+                <span class="credit-role">Localización</span>
+                <span class="credit-name">Finca Las Velas</span>
+            </div>
+            <div class="credit-group">
+                <span class="credit-role">Fotografía</span>
+                <span class="credit-name">Azul invisible</span>
+            </div>
+        </div>
+
+        <div class="footer-bottom-copy">
+            <p>&copy; Ningún derecho reservado, pero lo intentamos. Marta &amp; Nacho</p>
+        </div>
+    </div>
+</footer>
+
+    </main>
+
+    <!-- GSAP & Lenis Smooth Scroll Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
